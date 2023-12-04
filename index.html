@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iPhone Frame Web Page</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gothic+A1&family=Libre+Caslon+Text&family=Maven+Pro&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="iphone-frame">
+        <div id="top-bar">
+            <div id="camera"></div>
+            <div id="clock">12:00</div>
+        </div>
+        <div id="screen-content">
+          <section style="background-image: url(assets/clocks.png); background-size: cover;">
+            <h1>Set Your Times</h1>
+          </section>
+          <section id="date-picker">
+            <p>
+              1. Set the days for your subscription.
+            </p>
+            <div class="dowPicker">
+              <div class="dowPickerOption">
+                <input type="checkbox" id="dow1">
+                <label for="dow1">
+                  <p>Sun</p>
+                  <p>12:00P</p>
+                  <button>X</button>
+                </label>
+                
+              </div>
+              <div class="dowPickerOption">
+                <input type="checkbox" id="dow2">
+                <label for="dow2">Mon</label>
+              </div>
+              <div class="dowPickerOption">
+                <input type="checkbox" id="dow3">
+                <label for="dow3">Tue</label>
+              </div>
+              <div class="dowPickerOption">
+                <input type="checkbox" id="dow4">
+                <label for="dow4">Wed</label>
+              </div>
+              <div class="dowPickerOption">
+                <input type="checkbox" id="dow5">
+                <label for="dow5">Thu</label>
+              </div>
+              <div class="dowPickerOption">
+                <input type="checkbox" id="dow6">
+                <label for="dow6">Fri</label>
+              </div>
+              <div class="dowPickerOption">
+                <input type="checkbox" id="dow7">
+                <label for="dow7">Sat</label>
+              </div>
+            </div> 
+          </section>
+          <section id="time-picker">
+            <p>
+              2. Set desired pickup time for the day chosen.
+            </p>
+            <p>
+              To pick up multiple times per day, create a new subscription.
+            </p>
+            <div id="hour-minute-picker">
+              <div class="hour-setter">
+                <button class="arrow-button arrow-button-up" onclick="incrementHour()">+</button>
+                <input type="text" id="hour-input" class="hour-input" value="12" maxlength="2" readonly>
+                <button class="arrow-button arrow-button-down" onclick="decrementHour()">-</button>
+              </div>
+              :
+              <div class="minute-setter">
+                <button class="arrow-button arrow-button-up" onclick="incrementMinute()">+</button>
+                <input type="text" id="minute-input" class="time-input" value="00" maxlength="2" readonly>
+                <button class="arrow-button arrow-button-down" onclick="decrementMinute()">-</button>              
+              </div>
+            </div>
+            
+            <div class="ampm-toggle">
+              <button id="ampm-toggle" class="toggle-button" onclick="toggleAMPM()">AM</button>
+            </div>
+          </section>
+          <section>
+            <button>CONFIRM</button>
+            <a href="google.com">Back</a>
+          </section>
+          <section id="footer">
+            Test
+          </section>
+        </div>
+        <div id="bottom-bar"></div>
+    </div>
+    <script src ="script.js"></script>
+</body>
+</html>

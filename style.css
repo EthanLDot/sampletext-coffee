@@ -1,0 +1,220 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+    box-sizing: border-box;
+}
+
+#iphone-frame {
+    position: relative;
+    width: 375px; /* Adjust the width as needed */
+    height: 667px; /* Adjust the height as needed */
+    border-radius: 40px;
+    border: 10px black solid;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+#top-bar {
+    height: 20px;
+    background-color: #222;
+    border-radius: 30px 30px 0 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    font-family: 'Maven Pro', sans-serif;
+}
+
+#camera {
+    width: 15px;
+    height: 15px;
+    background-color: #000;
+    border-radius: 50%;
+    position: absolute;
+    left: 70%;
+}
+
+#clock {
+    color: #fff;
+    position: absolute;
+    left: 5%;
+}
+
+#bottom-bar {
+    height: 5px;
+    background-color: #646464;
+    border-radius: 40px;
+    position: absolute;
+    bottom: 10px;
+    width: 90%;
+    left: 5%;
+    right: 5%;
+}
+
+#screen-content {
+    display: grid;
+    grid-template-rows: 20% 25% 35% 10% 10%;
+    grid-template-columns: 100%;
+    position: absolute;
+    top: 20px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    background-color: red;
+    border-radius: 0 0 30px 30px;
+    overflow: hidden;
+    font-family: 'Gothic A1', sans-serif;
+}
+
+#screen-content p {
+    margin: 0;
+}
+
+#screen-content section {
+width: 100%;
+border: 1px solid #000;
+}
+
+#screen-content section:nth-child(1)
+{
+    font-family: 'Libre Caslon Text', serif;
+    color: #E6DCA5;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+}
+
+#screen-content section:nth-child(2), #screen-content section:nth-child(3) {
+    background-color: #ffcccb;
+    font-size: 1.25rem;
+    text-align: center;
+}
+
+#screen-content section:nth-child(4){
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#screen-content section:nth-child(4) > *{
+    height: 50%;
+    text-decoration: none;
+    color: black;
+}
+
+#screen-content section:nth-child(4) > button{
+    background-color: #641649;
+    color: #E6DCA5;
+    border: none;
+    border-radius: 30px;
+    width: 50%;
+    height: 50px;
+}
+
+.dowPicker {
+    width: 100%;
+    padding: 0;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.dowPicker .dowPickerOption {
+    width: calc((100% - 30px) / 7);
+    border: 1px black solid;
+    height: 100px;
+}
+.dowPicker .dowPickerOption input[type=checkbox] {
+    display: none;
+    height: 100%;
+}
+.dowPicker .dowPickerOption label {
+    font-size: 20px;
+    color: #000;
+    cursor: pointer;
+    text-transform: uppercase;
+    text-align: center;
+    display: block;
+    width: 100%;
+    height: 100%;
+    font-size: 1rem;
+    line-height: 25px;
+}
+.dowPicker .dowPickerOption input[type=checkbox]:checked ~ label {
+    color: #E6DCA5;
+    background-color: #641649;
+}
+
+.dowPicker .dowPickerOption input[type=checkbox]:checked ~ label button{
+    color: #000;
+    background-color: #E6DCA5;
+}
+
+#time-picker p:nth-child(2){
+    font-size: 0.75rem;
+}
+
+.dowPicker .dowPickerOption label button {
+    border-radius: 100%;
+    margin: 10px;
+    color: #000;
+    background-color: transparent;
+}
+
+#time-picker .hour-setter, .minute-setter{
+    display: flex;
+    flex-direction: column;
+}
+
+#time-picker #hour-minute-picker{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: row;
+    border-radius: 50px;
+    font-size: 3rem;
+}
+
+#time-picker #hour-minute-picker > *{
+    width: 30%;
+}
+
+#time-picker .arrow-button {
+    height: 25px;
+    font-size: 1rem;
+    background-color: #641649;
+    border: none;
+    color: #E6DCA5;
+}
+#time-picker .arrow-button-up{
+    border-radius: 30px 30px 0 0;
+}
+
+#time-picker .arrow-button-down{
+    border-radius: 0 0 30px 30px;
+}
+
+#time-picker .arrow-button-up:active, #time-picker .arrow-button-down:active, #ampm-toggle:active{
+    border: 5px #E6DCA5 solid;
+}
+
+#hour-input, #minute-input{
+    text-align: center;
+    height: 50px;
+    font-size: 3rem;
+    background-color: #641649;
+    border: none;
+    color: #E6DCA5;
+}
+
+#ampm-toggle{
+    background-color: #641649;
+    border: none;
+    color: #E6DCA5;
+    height: 50px;
+    width: 100px;
+    border-radius: 30px;
+    font-size: 2rem;
+}
