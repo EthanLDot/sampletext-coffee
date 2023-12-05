@@ -48,7 +48,7 @@ body {
     background-color: #646464;
     border-radius: 40px;
     position: absolute;
-    bottom: 10px;
+    bottom: 5px;
     width: 90%;
     left: 5%;
     right: 5%;
@@ -63,7 +63,6 @@ body {
     left: 0px;
     right: 0px;
     bottom: 0px;
-    background-color: red;
     border-radius: 0 0 30px 30px;
     overflow: hidden;
     font-family: 'Gothic A1', sans-serif;
@@ -74,8 +73,7 @@ body {
 }
 
 #screen-content section {
-width: 100%;
-border: 1px solid #000;
+    width: 100%;
 }
 
 #screen-content section:nth-child(1)
@@ -87,7 +85,6 @@ border: 1px solid #000;
 }
 
 #screen-content section:nth-child(2), #screen-content section:nth-child(3) {
-    background-color: #ffcccb;
     font-size: 1.25rem;
     text-align: center;
 }
@@ -142,14 +139,15 @@ border: 1px solid #000;
     font-size: 1rem;
     line-height: 25px;
 }
-.dowPicker .dowPickerOption input[type=checkbox]:checked ~ label {
-    color: #E6DCA5;
-    background-color: #641649;
+.dowPicker .dowPickerOption:not([data-toggled="true"]) input[type=checkbox]:checked ~ label {
+    /* color: #E6DCA5; */
+    background-color: #ffcccb;
 }
 
-.dowPicker .dowPickerOption input[type=checkbox]:checked ~ label button{
+.dowPicker .dowPickerOption input[type=checkbox]~ label button{
     color: #000;
     background-color: #E6DCA5;
+    cursor: pointer;
 }
 
 #time-picker p:nth-child(2){
@@ -217,4 +215,51 @@ border: 1px solid #000;
     width: 100px;
     border-radius: 30px;
     font-size: 2rem;
+}
+
+.fa-instagram {
+    font-size: 40px; /* changes the size of the icon */
+    color: teal;
+    }
+
+#footer{
+    background-color: #ffcccb;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#footer > a{
+    border: 1px solid black;
+    height: 100%;
+    width: 33%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-decoration: none;
+    color: black;
+}
+
+#footer > a > i {
+    margin: 5px;
+    color: black;
+}
+
+#footer > a:nth-child(3){
+    background-color: #641649;
+    color: #E6DCA5;
+    pointer-events: none;
+}
+
+#footer > a:nth-child(3) > *{
+    color: #E6DCA5;
+}
+
+.dowPickerOption[data-toggled="true"]{
+    background-color: #641649 !important;
+    color: #E6DCA5 !important;
+}
+
+.dowPickerOption[data-toggled="true"] > *{
+    color: #E6DCA5 !important;
 }

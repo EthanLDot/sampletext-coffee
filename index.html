@@ -6,8 +6,9 @@
     <title>iPhone Frame Web Page</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Gothic+A1&family=Libre+Caslon+Text&family=Maven+Pro&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gothic+A1&family=Libre+Caslon+Text&family=Maven+Pro&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
     <div id="iphone-frame">
@@ -24,38 +25,33 @@
               1. Set the days for your subscription.
             </p>
             <div class="dowPicker">
-              <div class="dowPickerOption">
-                <input type="checkbox" id="dow1">
-                <label for="dow1">
-                  <p>Sun</p>
-                  <p>12:00P</p>
-                  <button>X</button>
-                </label>
-                
+              <div class="dowPickerOption" data-toggled = "false">
+                <input type="checkbox" id="sun">
+                <label for="sun">Sun</label>                
               </div>
-              <div class="dowPickerOption">
-                <input type="checkbox" id="dow2">
-                <label for="dow2">Mon</label>
+              <div class="dowPickerOption" data-toggled = "false">
+                <input type="checkbox" id="mon">
+                <label for="mon">Mon</label>
               </div>
-              <div class="dowPickerOption">
-                <input type="checkbox" id="dow3">
-                <label for="dow3">Tue</label>
+              <div class="dowPickerOption" data-toggled = "false">
+                <input type="checkbox" id="tue">
+                <label for="tue">Tue</label>
               </div>
-              <div class="dowPickerOption">
-                <input type="checkbox" id="dow4">
-                <label for="dow4">Wed</label>
+              <div class="dowPickerOption" data-toggled = "false">
+                <input type="checkbox" id="wed">
+                <label for="wed">Wed</label>
               </div>
-              <div class="dowPickerOption">
-                <input type="checkbox" id="dow5">
-                <label for="dow5">Thu</label>
+              <div class="dowPickerOption" data-toggled = "false">
+                <input type="checkbox" id="thu">
+                <label for="thu">Thu</label>
               </div>
-              <div class="dowPickerOption">
-                <input type="checkbox" id="dow6">
-                <label for="dow6">Fri</label>
+              <div class="dowPickerOption" data-toggled = "false">
+                <input type="checkbox" id="fri">
+                <label for="fri">Fri</label>
               </div>
-              <div class="dowPickerOption">
-                <input type="checkbox" id="dow7">
-                <label for="dow7">Sat</label>
+              <div class="dowPickerOption" data-toggled = "false">
+                <input type="checkbox" id="sat">
+                <label for="sat">Sat</label>
               </div>
             </div> 
           </section>
@@ -85,11 +81,15 @@
             </div>
           </section>
           <section>
-            <button>CONFIRM</button>
-            <a href="google.com">Back</a>
+            <button style="cursor: pointer;" onclick="setTimes()">CONFIRM</button>
+            <a href="http://www.google.com">Back</a>
           </section>
           <section id="footer">
-            Test
+            
+            <a href="http://www.thedrive.com"><i class="fa-solid fa-user"></i>Profile</a>
+            <a href="http://www.theautopian.com"><i class="fa-solid fa-mug-saucer"></i>Order</a>
+            <a href=""><i class="fa-solid fa-book"></i>Subscriptions</a>
+
           </section>
         </div>
         <div id="bottom-bar"></div>
