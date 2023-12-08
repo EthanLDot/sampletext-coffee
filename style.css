@@ -56,7 +56,7 @@ body {
 
 #screen-content {
     display: grid;
-    grid-template-rows: 20% 25% 35% 10% 10%;
+    grid-template-rows: 20% 25% 30% 15% 10%;
     grid-template-columns: 100%;
     position: absolute;
     top: 20px;
@@ -65,6 +65,13 @@ body {
     bottom: 0px;
     border-radius: 0 0 30px 30px;
     overflow: hidden;
+    font-family: 'Gothic A1', sans-serif;
+}
+
+#screen-content-2 {
+    display: grid;
+    grid-template-rows: 25% 5% 55% 10%;
+    grid-template-columns: 100%;
     font-family: 'Gothic A1', sans-serif;
 }
 
@@ -85,7 +92,7 @@ body {
 }
 
 #screen-content section:nth-child(2), #screen-content section:nth-child(3) {
-    font-size: 1.25rem;
+    font-size: 1.1rem;
     text-align: center;
 }
 
@@ -95,20 +102,13 @@ body {
     align-items: center;
 }
 
-#screen-content section:nth-child(4) > *{
+#screen-content section:nth-child(4) > a{
     height: 50%;
     text-decoration: none;
     color: black;
 }
 
-#screen-content section:nth-child(4) > button{
-    background-color: #641649;
-    color: #E6DCA5;
-    border: none;
-    border-radius: 30px;
-    width: 50%;
-    height: 50px;
-}
+
 
 .dowPicker {
     width: 100%;
@@ -117,6 +117,9 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    -webkit-box-shadow: 0 0 10px #000;
+    box-shadow: 0 0 10px #000;
+    margin: 15px 0;
 }
 .dowPicker .dowPickerOption {
     width: calc((100% - 30px) / 7);
@@ -138,6 +141,10 @@ body {
     height: 100%;
     font-size: 1rem;
     line-height: 25px;
+}
+
+.dowPicker .dowPickerOption label:active{
+    background-color: #ffcccb;
 }
 .dowPicker .dowPickerOption:not([data-toggled="true"]) input[type=checkbox]:checked ~ label {
     /* color: #E6DCA5; */
@@ -164,6 +171,9 @@ body {
 #time-picker .hour-setter, .minute-setter{
     display: flex;
     flex-direction: column;
+    -webkit-box-shadow: 0 0 10px #000;
+    box-shadow: 0 0 10px #000;
+    border-radius: 30px;
 }
 
 #time-picker #hour-minute-picker{
@@ -173,14 +183,15 @@ body {
     flex-direction: row;
     border-radius: 50px;
     font-size: 3rem;
+    margin: 10px 0;
 }
 
 #time-picker #hour-minute-picker > *{
-    width: 30%;
+    width: 40%;
 }
 
 #time-picker .arrow-button {
-    height: 25px;
+    height: 20px;
     font-size: 1rem;
     background-color: #641649;
     border: none;
@@ -200,7 +211,7 @@ body {
 
 #hour-input, #minute-input{
     text-align: center;
-    height: 50px;
+    height: 40px;
     font-size: 3rem;
     background-color: #641649;
     border: none;
@@ -215,6 +226,8 @@ body {
     width: 100px;
     border-radius: 30px;
     font-size: 2rem;
+    -webkit-box-shadow: 0 0 10px #000;
+    box-shadow: 0 0 10px #000;
 }
 
 .fa-instagram {
@@ -249,6 +262,7 @@ body {
     background-color: #641649;
     color: #E6DCA5;
     pointer-events: none;
+    
 }
 
 #footer > a:nth-child(3) > *{
@@ -262,4 +276,51 @@ body {
 
 .dowPickerOption[data-toggled="true"] > *{
     color: #E6DCA5 !important;
+}
+
+@keyframes fadeOut {
+    70% { opacity: 1; }
+    100% { opacity: 0;
+    display: none;}
+  }
+
+#notif{
+    position: absolute;
+    background-color: gray;
+    color: white;
+    top: 45%;
+    width: 80%;
+    right: 10%;
+    min-height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    font-family: 'Gothic A1', sans-serif;
+    border: 2px white dashed;
+    animation: fadeOut 5s ease-out forwards;
+}
+
+#confirm-btn{
+    color: #E6DCA5;
+    -webkit-box-shadow: 0 0 10px #000;
+    box-shadow: 0 0 10px #000;
+    cursor: pointer;
+    background-color: #641649;
+    border: none;
+    border-radius: 30px;
+    width: 50%;
+    height: 50px;
+}
+
+#confirm-btn:active{
+    border: 5px solid #E6DCA5;
+}
+
+#btns{
+    margin: 10px 0;
+}
+
+#btns > a{
+    margin-top: 10px;
 }
