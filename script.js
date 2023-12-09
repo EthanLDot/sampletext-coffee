@@ -1,5 +1,26 @@
 const hourInput = document.getElementById('hour-input');
 const minuteInput = document.getElementById('minute-input');
+let numChecked = 0;
+
+
+const checkboxes = document.querySelectorAll('.dowPickerOption input[type="checkbox"]');
+checkboxes.forEach(function(checkbox) {
+  checkbox.addEventListener('change', function() {
+    console.log("test");
+    if (this.checked) {
+      numChecked = numChecked + 1;
+      if(numChecked >= 1){
+        document.getElementById("confirm-btn").disabled = false;
+      }
+    } else {
+      numChecked = numChecked - 1;
+      if(numChecked === 0){
+        document.getElementById("confirm-btn").disabled = true;
+      }
+    }
+    console.log(numChecked);
+  });
+});
 
 function incrementHour() {
 let currentHour = parseInt(hourInput.value);
@@ -29,14 +50,12 @@ function checkTime(){
     step2Text.textContent = "You cannot pick up items at this time.";
     step2Text.style.color = 'red';
     confirmBtn.disabled = true;
-    confirmBtn.style.backgroundColor = "gray";
   }
   else
   {
     step2Text.textContent = "To pick up multiple times per day, create a new subscription.";
     step2Text.style.color = 'black';
     confirmBtn.disabled = false;
-    confirmBtn.style.backgroundColor = "#641649";
   }
 }
 
@@ -69,7 +88,6 @@ function toggleAMPM() {
 }
 
 function setTimes(){
-
   const hour = document.getElementById("hour-input").value[0] == '0' ? document.getElementById("hour-input").value[1] : document.getElementById("hour-input").value;
   const minute = document.getElementById("minute-input").value;
   const ampm = document.getElementById("ampm-toggle").innerText[0];
@@ -81,8 +99,11 @@ function setTimes(){
       checkbox.nextElementSibling.innerHTML = "<p>"+checkbox.id+"</p><p>"+time+"</p><button onclick='removeDay(this)'>X</button>";
       dates = dates + checkbox.id.toUpperCase() + ",";
       checkbox.parentElement.setAttribute('data-toggled', 'true');
+      checkbox.disabled = true;
     }
   });
+  numChecked = 0;
+  document.getElementById("confirm-btn").disabled = true;
   const alertMsg = "TIMES ADDED: " + hour + ":" + minute + ampm + " " + dates;
   sendAlert(alertMsg.substring(0, alertMsg.length - 1));
 }
@@ -91,7 +112,10 @@ function removeDay(el){
   const dayElement = el.parentElement.parentElement;
   const day = el.parentElement.innerText.substring(0, 3);
   dayElement.setAttribute('data-toggled', 'false');
-  dayElement.innerHTML = "<input type='checkbox' id='" + day + "'><label for='"+  day + "'>" + day + "</label>";
+  dayElement.querySelector('input').disabled = false;
+  dayElement.querySelector('label').innerHTML = day;
+  dayElement.querySelector('input').checked = false;
+  dayElement.active = false;
   sendAlert("removed times for " + day);
 
 }

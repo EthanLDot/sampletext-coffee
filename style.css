@@ -313,7 +313,12 @@ body {
     height: 50px;
 }
 
-#confirm-btn:active{
+#confirm-btn:disabled{
+    background-color: gray;
+    cursor: none;
+}
+
+#confirm-btn:not(:disabled):active{
     border: 5px solid #E6DCA5;
 }
 
